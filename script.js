@@ -19,7 +19,7 @@ function bubbleSort(){
    document.getElementById('num2').classList.add('animation-2');
    document.getElementById('num20').classList.add('animation-20');
 
-   intervalId = setInterval(changeBtnName, 10000);
+   intervalId = setInterval(changeBtnName, 16000);
 
 }
 
