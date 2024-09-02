@@ -1,8 +1,11 @@
 const startBtn = document.getElementById('start-btn');
 const iterationDesc = document.getElementById('iteration-desc');
-let sortBtnIntervalId, iterationDescIntervalId, count = 0, startBtnToggle = false;
+let startBtnIntervalId, iterationDescIntervalId, count = 0, startBtnToggle = false;
 
 startBtn.addEventListener('click', function(){
+
+    clearInterval(startBtnIntervalId);
+    clearInterval(iterationDescIntervalId);
 
     if(!startBtnToggle){
         bubbleSort();
@@ -14,6 +17,7 @@ startBtn.addEventListener('click', function(){
         count = 0;
         iterationDesc.innerText = '';
     }
+    
 });
 
 function bubbleSort(){
@@ -27,7 +31,9 @@ function bubbleSort(){
 
    iterationDesc.innerText = 'First iteration sorts 91'
 
-   sortBtnIntervalId = setInterval(changeBtnName, 15000);
+   startBtn.innerText = 'Sorting...'
+
+   startBtnIntervalId = setInterval(changeBtnName, 15000);
 }
 
 function revert(){
@@ -39,7 +45,7 @@ function revert(){
     document.getElementById('num2').classList.remove('animation-2');
     document.getElementById('num20').classList.remove('animation-20');
 
-    sortBtnIntervalId = setInterval(changeBtnName, 1);
+    startBtnIntervalId = setInterval(changeBtnName, 1);
 }
 
 function changeBtnName(){
@@ -48,7 +54,7 @@ function changeBtnName(){
     }else{
         startBtn.innerText = 'BubbleSort'
     }
-    clearInterval(sortBtnIntervalId);
+    clearInterval(startBtnIntervalId);
 }
 
 function showIterationDesc(){
