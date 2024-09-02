@@ -27,7 +27,7 @@ function bubbleSort(){
 
    iterationDesc.innerText = 'First iteration sorts 91'
 
-   sortBtnIntervalId = setInterval(changeBtnName, 16000);
+   sortBtnIntervalId = setInterval(changeBtnName, 15000);
 }
 
 function revert(){
